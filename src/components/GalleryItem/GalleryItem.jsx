@@ -18,7 +18,7 @@ function GalleryItem ({item}) {
 const getDescription = () => {
     if (toggleDescription === true) {
         return (
-            <p>{item.getDescription}</p>
+            <p>{item.description}</p>
         )
     } else {
         return (
@@ -35,7 +35,7 @@ const getDescription = () => {
         <button onClick= {addLike}>Like</button>
 
         <button onClick={() => setDescription(!toggleDescription)}>
-            {toggleDescription ? 'Description' : 'Image'}
+            {toggleDescription ? 'Image' : 'Description'}
         </button>
         {
             getDescription()
