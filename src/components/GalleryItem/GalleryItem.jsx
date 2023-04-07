@@ -18,15 +18,15 @@ function GalleryItem ({item}) {
 const getDescription = () => {
     if (toggleDescription === true) {
         return (
-            <p>{item.description}</p>
+            <p onClick={() => setDescription(!toggleDescription)}>{'\"'+item.description+'\"'}</p>
         )
     } else {
         return (
-            <img src={item.path} />
+            <img onClick={() => setDescription(!toggleDescription)} src={item.path} />
         )
     }
 }
-
+// Used a concatonatin string to add "" around descriptions ^^^
 
     return(
         <>
@@ -36,11 +36,13 @@ const getDescription = () => {
         }
         </p>
         <p>{likeCount} likes</p>
+        <p>
         <button onClick= {addLike}>Like</button>
 
         <button onClick={() => setDescription(!toggleDescription)}>
             {toggleDescription ? 'Image' : 'Description'}
         </button>
+        </p>
         </>
     )
 }
