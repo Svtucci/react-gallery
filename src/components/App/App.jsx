@@ -1,9 +1,20 @@
 import React from 'react';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
-
+import {useState, useEffect} from 'react'
 
 function App() {
+  const [galleryData, setGalleryList] = useState([])
+
+  const galleryList = () => {
+    axios.get('/gallery').then((response) => {
+        setGalleryList(response.data)
+    }).catch((error) => {
+        console.log(`Error in GET ${error}`);
+        alert('Something went wrong in GET');
+    });
+}
+
     return (
       <div className="App">
         <header className="App-header">
@@ -11,7 +22,9 @@ function App() {
         </header>
         <p>Gallery goes here</p>
         <img src="images/goat_small.jpg"/>
-        <GalleryList />
+        <GalleryList
+        galleryData = {galleryData}
+        />
       </div>
     );
 }

@@ -1,18 +1,10 @@
 import axios from 'axios'; 
 import {useState, useEffect} from 'react'; 
 
-function GalleryList () {
-    const[list, setGalleryList] = useState([]); 
+function GalleryList (galleryData) {
+    // const[list, setGalleryList] = useState([]); 
 
 
-    const galleryList = () => {
-        axios.get('/gallery').then((response) => {
-            setGalleryList(response.data)
-        }).catch((error) => {
-            console.log(`Error in GET ${error}`);
-            alert('Something went wrong in GET');
-        });
-    }
 
 
     // SAVE FOR LATER IF NEEDED 
@@ -22,7 +14,16 @@ function GalleryList () {
 
     return(
         <>
+        <div>
         <h1>Gallery List</h1>
+        {galleryData.map(item => (
+            <galleryItem 
+            key={item.id}
+            item={item}
+            />
+        ))}
+        </div>
+        
         </>
     )
 }
