@@ -20,7 +20,7 @@ function GalleryList ({galleryData}) {
         <h1>Gallery List</h1>
         </div>
 
-        <div>
+        
 
         {galleryData.map((item) => (
             <div key={item.id}>
@@ -30,7 +30,7 @@ function GalleryList ({galleryData}) {
             />
             </div>
         ))}
-        </div>
+        
         
         </>
     )

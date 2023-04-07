@@ -30,7 +30,7 @@ const getDescription = () => {
 
     return(
         <>
-        <img src = {item.path} />
+        {/* <img src = {item.path} /> */}
         <p>{likeCount} likes</p>
         <button onClick= {addLike}>Like</button>
 
