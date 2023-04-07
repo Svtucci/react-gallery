@@ -6,13 +6,13 @@ function GalleryItem ({item}) {
     const [likeCount, setLikeCount] = useState(item.likes)
 
     const addLike = () => {
-        axios.put('/gallery/like/${item.id}').then((response) => {
+        axios.put(`/gallery/like/${item.id}`).then((response) => {
             setLikeCount(likeCount + 1);
     }).catch((error) => {
         console.log(`Error in POST ${error}`);
-        alert('Something went wrong in POSt')
-    })
-}
+        alert('Something went wrong in POSt');
+    });
+};
 
     return(
         <>
