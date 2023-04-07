@@ -15,25 +15,19 @@ function GalleryList ({galleryData}) {
     // }, []);
 
     return(
-        <>
-        <div>
+        
+    <div>
         <h1>Gallery List</h1>
-        </div>
-
-        
-
+        <p>
         {galleryData.map((item) => (
-            <div key={item.id}>
-
             <GalleryItem 
-            item={item}
+                key={item.id} 
+                item={item} 
             />
-            </div>
         ))}
-        
-        
-        </>
-    )
+        </p>
+    </div>
+    );
 }
 
 export default GalleryList

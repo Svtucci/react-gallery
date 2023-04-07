@@ -30,16 +30,17 @@ const getDescription = () => {
 
     return(
         <>
-        {/* <img src = {item.path} /> */}
+        <p>
+        {
+            getDescription()
+        }
+        </p>
         <p>{likeCount} likes</p>
         <button onClick= {addLike}>Like</button>
 
         <button onClick={() => setDescription(!toggleDescription)}>
             {toggleDescription ? 'Image' : 'Description'}
         </button>
-        {
-            getDescription()
-        }
         </>
     )
 }
