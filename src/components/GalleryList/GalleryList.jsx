@@ -18,15 +18,17 @@ function GalleryList ({galleryData}) {
         <>
         <div>
         <h1>Gallery List</h1>
+        </div>
 
-        <ul>
+        <div>
         {galleryData.map((item) => (
-            <GalleryItem 
-            key={item.id}
+            <div key={item.id}>
+                <GalleryItem 
+            
             item={item}
             />
+            </div>
         ))}
-        </ul>
         </div>
         
         </>
