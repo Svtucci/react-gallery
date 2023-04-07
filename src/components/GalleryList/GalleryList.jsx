@@ -21,13 +21,16 @@ function GalleryList ({galleryData}) {
         </div>
 
         <div>
+
         {galleryData.map((item) => (
             <div key={item.id}>
-                <GalleryItem 
-            
+            <GalleryItem 
             item={item}
             />
+
             </div>
+
+            
         ))}
         </div>
         
