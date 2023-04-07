@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
 import {useState, useEffect} from 'react'
+import axios from 'axios'; 
 
 function App() {
   const [galleryData, setGalleryList] = useState([])
@@ -12,8 +13,12 @@ function App() {
     }).catch((error) => {
         console.log(`Error in GET ${error}`);
         alert('Something went wrong in GET');
-    });
+    }, []);
 }
+
+    useEffect(() => {
+        galleryList ();
+    }, []);
 
     return (
       <div className="App">
@@ -22,9 +27,11 @@ function App() {
         </header>
         <p>Gallery goes here</p>
         <img src="images/goat_small.jpg"/>
+
         <GalleryList
         galleryData = {galleryData}
         />
+
       </div>
     );
 }

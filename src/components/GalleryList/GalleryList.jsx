@@ -1,27 +1,32 @@
 import axios from 'axios'; 
 import {useState, useEffect} from 'react'; 
-
-function GalleryList (galleryData) {
-    // const[list, setGalleryList] = useState([]); 
+import GalleryItem from '../GalleryItem/GalleryItem';
 
 
+function GalleryList ({galleryData}) {
+    const[list, setGalleryList] = useState([]); 
+
+   
 
 
     // SAVE FOR LATER IF NEEDED 
     // useEffect(() => {
-    //     fetchAdditem ();
+    //     galleryList ();
     // }, []);
 
     return(
         <>
         <div>
         <h1>Gallery List</h1>
-        {galleryData.map(item => (
-            <galleryItem 
+
+        <ul>
+        {galleryData.map((item) => (
+            <GalleryItem 
             key={item.id}
             item={item}
             />
         ))}
+        </ul>
         </div>
         
         </>
