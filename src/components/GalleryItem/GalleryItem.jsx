@@ -26,7 +26,7 @@ const getDescription = () => {
         )
     }
 }
-// Used a concatonatin string to add "" around descriptions ^^^
+// Used a concatonating string to add "" around descriptions ^^^
 
     return(
         <>
