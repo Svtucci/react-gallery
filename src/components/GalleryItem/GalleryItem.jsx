@@ -1,5 +1,6 @@
 import axios from 'axios'; 
 import {useState, useEffect} from 'react'; 
+import Button from '@mui/material/Button';
 
 
 function GalleryItem ({item}) {
@@ -37,11 +38,12 @@ const getDescription = () => {
         </p>
         <p>{likeCount} likes</p>
         <p>
-        <button onClick= {addLike}>Like</button>
-
-        <button onClick={() => setDescription(!toggleDescription)}>
+        <Button variant = "outlined" onClick= {addLike}>Like</Button>
+        <br />
+        <br />
+        <Button variant= "outlined" onClick={() => setDescription(!toggleDescription)}>
             {toggleDescription ? 'Image' : 'Description'}
-        </button>
+        </Button>
         </p>
         </>
     )
