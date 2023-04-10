@@ -34,7 +34,8 @@ const getDescription = () => {
         return (
             <CardMedia
                 component="img"
-                height="140"
+                height="375"
+                width="500"
                 image={item.path}
                 onClick={() => setDescription(!toggleDescription)}
             />
@@ -44,7 +45,8 @@ const getDescription = () => {
 // Used a concatonating string to add "" around descriptions ^^^
 
     return(
-        <Card sx={{height: 400, width: 300}}>
+    <div style={{ display:'flex', justifyContent: 'center', margin: '10px'}}>
+    <Card sx={{height: 500}}>
         <CardActionArea>
             {getDescription()}
         </CardActionArea>
@@ -61,6 +63,7 @@ const getDescription = () => {
             </Button>
         </CardContent>
     </Card>
+    </div>
     )
 }
 
